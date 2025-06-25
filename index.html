@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Selamat Ulang Tahun, Sayang!</title>
+  <style>
+    :root {
+      --pink-light: #fbc2eb;
+      --blue-light: #a6c1ee;
+      --white-glass: rgba(255, 255, 255, 0.15);
+      --shadow: rgba(0, 0, 0, 0.2);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, var(--pink-light), var(--blue-light));
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .screen {
+      display: none;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .show {
+      display: flex;
+    }
+
+    /* Splash Screen */
+    #splash h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .dots span {
+      font-size: 36px;
+      animation: blink 1s infinite;
+    }
+
+    .dots span:nth-child(2) { animation-delay: 0.2s; }
+    .dots span:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
+    }
+
+    /* Main Content */
+    #main {
+      padding-top: 40px;
+    }
+
+    .profile {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px var(--shadow);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 8px 0;
+    }
+
+    .love {
+      font-size: 30px;
+      animation: pulse 1.5s infinite;
+      margin: 10px 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .btn {
+      background: #fff;
+      color: #ff69b4;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffeaf4;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-top: 40px;
+      margin-bottom: 16px;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .gallery img {
+      width: 100px;
+      height: 100px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px var(--shadow);
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    .poem {
+      background: var(--white-glass);
+      padding: 20px;
+      border-radius: 16px;
+      margin: 30px auto;
+      max-width: 600px;
+      line-height: 1.6;
+      font-size: 16px;
+      box-shadow: 0 4px 12px var(--shadow);
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    canvas#confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Splash Screen -->
+  <div id="splash" class="screen show">
+    <h1> hii sayanggg</h1>
+    <div class="dots"><span>.</span><span>.</span><span>.</span></div>
+  </div>
+
+  <!-- Halaman Utama -->
+  <div id="main" class="screen">
+    <img src="logo.jpg" alt="Logo" class="profile">
+    <h1>🎉 Selamat Ulang Tahun, Cintaku! 🎂</h1>
+    <p>Hari ini adalah hari spesial, karena seseorang yang sangat aku cintai bertambah usia.</p>
+    <p>Aku bersyukur bisa bersamamu, dan aku berjanji akan selalu ada untukmu.</p>
+    <p>Semoga semua impianmu tercapai dan kamu selalu bahagia. ❤️</p>
+    <div class="love">💖💖💖</div>
+    <button class="btn" onclick="alert('kadonya nyusul ya ayy 😘')">Klik ayy</button>
+
+    <div class="section-title">📸 Kenangan Kita</div>
+    <div class="gallery">
+      <img src="FOTO1.jpg" alt="Foto 1">
+      <img src="FOTO2.jpg" alt="Foto 2">
+      <img src="FOTO3.jpg" alt="Foto 3">
+      <img src="FOTO4.jpg" alt="Foto 4">
+      <img src="FOTO5.jpg" alt="Foto 5">
+    </div>
+
+    <div class="section-title">📝 Untukmu, Cinta Sejatiku</div>
+    <div class="poem">
+      <p>Di hari istimewa ini, aku ingin kau tahu,</p>
+      <p>Cintaku padamu tumbuh setiap waktu.</p>
+      <p>Bagai bintang yang tak pernah lelah bersinar,</p>
+      <p>Hadirmu membuat segalanya jadi benar.</p>
+      <br />
+      <p>Langit tak akan cukup untuk menulis rinduku,</p>
+      <p>Samudra pun tak mampu menampung kasihku.</p>
+      <p>Terima kasih telah hadir di hidupku,</p>
+      <p>Selamat ulang tahun, cintaku yang satu. 💕</p>
+    </div>
+  </div>
+
+  <!-- Script Confetti + Transisi -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    function startConfetti() {
+      const duration = 5 * 1000;
+      const end = Date.now() + duration;
+      const defaults = { startVelocity: 20, spread: 360, ticks: 60, zIndex: 0 };
+
+      function random(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+
+      const interval = setInterval(() => {
+        const timeLeft = end - Date.now();
+        if (timeLeft <= 0) return clearInterval(interval);
+
+        confetti({
+          ...defaults,
+          particleCount: 5 * (timeLeft / duration),
+          origin: { x: random(0.1, 0.9), y: Math.random() - 0.2 }
+        });
+      }, 250);
+    }
+
+    setTimeout(() => {
+      document.getElementById('splash').classList.remove('show');
+      document.getElementById('main').classList.add('show');
+      startConfetti();
+    }, 4000);
+  </script>
+</body>
+</html>
